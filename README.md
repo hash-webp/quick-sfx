@@ -14,7 +14,8 @@ QuickSFX is a Godot 4 utility for managing and playing many sound effects simply
 
 func _ready():
   quick_sfx.play("coin")
-  quick_sfx.play("coin", 0.8, 1.5) # Optional volume/pitch overrides
+  quick_sfx.play("coin", 0.8)                # Optional volume override
+  quick_sfx.play("coin", 1.0, 2)             # Optional semitone override
 ```
 
 ## Classes
@@ -24,7 +25,8 @@ Represents a single sound effect.
 
 **Properties:**
 - `stream: AudioStream` – The audio resource.
-- `pitch_scale: float = 1.0` – Pitch multiplier for playback.
+- `pitch_shift: float = 0.0` – Default semitone offset.
+- `pitch_scale: float = 1.0` – Default pitch_scale multiplier.
 - `volume_linear: float = 1.0` – Linear volume multiplier.
 
 ---
@@ -38,10 +40,8 @@ Manages a pool of `AudioStreamPlayer`s and plays `QuickSFXClip`s.
 - `clips: Dictionary[String, QuickSFXClip]` – Map of clip names to `QuickSFXClip` resources.
 
 **Functions:**
-- `play(nice_name: String, volume_override: float = INF, pitch_scale_override: float = INF)`  
+- `play(nice_name: String, volume_override: float = INF, semitone_override: float = INF)`  
   Plays a clip by name. Optional overrides for volume and pitch.
-- `play_mult(nice_name: String, delay_between: float = 0.1, total_times: int = 5)`  
-  Plays a sound in successtion.
 - `set_bus(new_bus: String)`  
   Sets the audio bus for all players.
 - `set_pool(new_size: int)`  

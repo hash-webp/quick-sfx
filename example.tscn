@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dtp77ib8hbduf"]
+[gd_scene load_steps=15 format=3 uid="uid://dtp77ib8hbduf"]
 
 [ext_resource type="Script" uid="uid://b0t73104t6cm" path="res://example.gd" id="1_rujmf"]
 [ext_resource type="Script" uid="uid://dhi4oijbc2s7h" path="res://quick-sfx/quick_sfx.gd" id="2_kkclv"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://oktxevuqlctk" path="res://quick-sfx/example-sfx/explosion.wav" id="6_3dlnp"]
 [ext_resource type="AudioStream" uid="uid://d26e8db585wnb" path="res://quick-sfx/example-sfx/waves.wav" id="7_p21br"]
 [ext_resource type="Texture2D" uid="uid://sohjp7mi401n" path="res://icon.svg" id="8_kkclv"]
+[ext_resource type="AudioStream" uid="uid://dvhir4qg2tvye" path="res://quick-sfx/example-sfx/boop.wav" id="8_mt10o"]
 
 [sub_resource type="Resource" id="Resource_ofd4a"]
 script = ExtResource("3_mt10o")
@@ -17,7 +18,6 @@ metadata/_custom_type_script = "uid://cc7i6vagdv76n"
 [sub_resource type="Resource" id="Resource_35oce"]
 script = ExtResource("3_mt10o")
 stream = ExtResource("5_v40a1")
-volume_linear = 0.5
 metadata/_custom_type_script = "uid://cc7i6vagdv76n"
 
 [sub_resource type="Resource" id="Resource_wv1ka"]
@@ -28,6 +28,11 @@ metadata/_custom_type_script = "uid://cc7i6vagdv76n"
 [sub_resource type="Resource" id="Resource_kii8p"]
 script = ExtResource("3_mt10o")
 stream = ExtResource("7_p21br")
+metadata/_custom_type_script = "uid://cc7i6vagdv76n"
+
+[sub_resource type="Resource" id="Resource_hl4on"]
+script = ExtResource("3_mt10o")
+stream = ExtResource("8_mt10o")
 metadata/_custom_type_script = "uid://cc7i6vagdv76n"
 
 [node name="Example" type="Control"]
@@ -42,11 +47,13 @@ script = ExtResource("1_rujmf")
 [node name="QuickSFX" type="Node" parent="."]
 script = ExtResource("2_kkclv")
 clips = Dictionary[String, ExtResource("3_mt10o")]({
+"boop": SubResource("Resource_hl4on"),
 "click": SubResource("Resource_ofd4a"),
 "coin": SubResource("Resource_35oce"),
 "explosion": SubResource("Resource_wv1ka"),
 "waves": SubResource("Resource_kii8p")
 })
+pitch_shift_range = 12
 metadata/_custom_type_script = "uid://dhi4oijbc2s7h"
 
 [node name="CoinButton" type="Button" parent="."]
@@ -66,6 +73,14 @@ offset_right = 96.0
 offset_bottom = 640.0
 text = "Coin Drop"
 
+[node name="CoinsRiseUpButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 609.0
+offset_right = 217.0
+offset_bottom = 640.0
+text = "Twinkle Twinkle"
+
 [node name="ClickButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 300.0
@@ -73,6 +88,14 @@ offset_top = 189.0
 offset_right = 390.0
 offset_bottom = 220.0
 text = "Click"
+
+[node name="BoopButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 265.0
+offset_right = 425.0
+offset_bottom = 296.0
+text = "Boop"
 
 [node name="ExplosionButton" type="Button" parent="."]
 layout_mode = 0
