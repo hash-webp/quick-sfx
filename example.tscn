@@ -10,6 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://sohjp7mi401n" path="res://icon.svg" id="8_kkclv"]
 [ext_resource type="AudioStream" uid="uid://dvhir4qg2tvye" path="res://quick-sfx/example-sfx/boop.wav" id="8_mt10o"]
 
+[sub_resource type="Resource" id="Resource_hl4on"]
+script = ExtResource("3_mt10o")
+stream = ExtResource("8_mt10o")
+metadata/_custom_type_script = "uid://cc7i6vagdv76n"
+
 [sub_resource type="Resource" id="Resource_ofd4a"]
 script = ExtResource("3_mt10o")
 stream = ExtResource("4_hl4on")
@@ -28,11 +33,6 @@ metadata/_custom_type_script = "uid://cc7i6vagdv76n"
 [sub_resource type="Resource" id="Resource_kii8p"]
 script = ExtResource("3_mt10o")
 stream = ExtResource("7_p21br")
-metadata/_custom_type_script = "uid://cc7i6vagdv76n"
-
-[sub_resource type="Resource" id="Resource_hl4on"]
-script = ExtResource("3_mt10o")
-stream = ExtResource("8_mt10o")
 metadata/_custom_type_script = "uid://cc7i6vagdv76n"
 
 [node name="Example" type="Control"]

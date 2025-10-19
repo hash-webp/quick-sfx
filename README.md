@@ -7,8 +7,8 @@ QuickSFX is a Godot 4 utility for managing and playing many sound effects simply
 
 1. Add `res://quick-sfx/quick_sfx.gd` and `res://quick-sfx/quick_sfx_clip.gd` somewhere in your project.
 2. Add a `QuickSFX` node to your scene.  
-3. Configure the node's `Clips` property
-4. Play sounds with code!
+3. Configure the node's `Clips` property by creating a Dictionary of key/values.
+4. Play sounds with code by referencing a key!
 ```gdscript
 @onready var quick_sfx: QuickSFX = $QuickSFX
 

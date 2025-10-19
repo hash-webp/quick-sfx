@@ -5,6 +5,7 @@ resource_name = "Compressor"
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
 resource_name = "Reverb"
+room_size = 0.7
 damping = 0.2
 
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_j3pel"]

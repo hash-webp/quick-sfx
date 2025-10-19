@@ -42,7 +42,7 @@ func _generate_pitch_variants() -> void:
 				variants.append(base_clip) # fallback for non-WAV streams
 		_variant_clips[nice_name] = variants
 
-func play(nice_name: String, volume_override: float = INF, semitone_override: float = INF) -> void:
+func play(nice_name: String, volume_override: float = INF, semitone_override: float = INF, pitch_scale_override : float = INF) -> void:
 	if not clips.has(nice_name):
 		push_error("QuickSFX: clip '%s' not found" % nice_name)
 		return
@@ -69,7 +69,7 @@ func play(nice_name: String, volume_override: float = INF, semitone_override: fl
 	_queue.append(player)
 
 	player.stream = selected_clip.stream
-	player.pitch_scale = selected_clip.pitch_scale
+	player.pitch_scale = pitch_scale_override if pitch_scale_override != INF else selected_clip.pitch_scale
 	player.volume_linear = volume_override if volume_override != INF else selected_clip.volume_linear
 	player.play()
 
